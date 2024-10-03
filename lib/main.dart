@@ -77,12 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
               const Text(
                 '點擊右下角 Button 開始計算',
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               Text(
                 '總數量: $total',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
 
               Text(
                 '執行結果: $desc',
@@ -109,12 +109,11 @@ class NQueensSolverIterative {
   NQueensSolverIterative(this.n);
 
   List<List<int>> solveNQueens() {
-    // 初始化栈，每个元素是一个数组，表示当前的棋盘状态
-    // 每个状态包含两个列表：放置的列和当前行
+    // 初始化stack，每个元素是一个number set，表示目前的棋盤状态
     List<int> board = List.filled(n, -1);
-    List<int> cols = List.filled(n, 0); // 记录每列是否被占用
-    List<int> diag1 = List.filled(2 * n - 1, 0); // 對角線
-    List<int> diag2 = List.filled(2 * n - 1, 0); // 對角線
+    List<int> cols = List.filled(n, 0); // 紀錄每col是否被占用
+    List<int> diag1 = List.filled(2 * n - 1, 0); // 對角線1
+    List<int> diag2 = List.filled(2 * n - 1, 0); // 對角線2
 
     int row = 0;
     int col = 0;
